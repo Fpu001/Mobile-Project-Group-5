@@ -1,15 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { useEffect, useState } from 'react'
+import { View, Text, Image, TouchableOpacity, Alert, Pressable } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import logo from './assets/logo.png';
+import styles from './style/style'
 import etusivu from './components/etusivu';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-const App = () => {
+const App = ({navigation, route}) => {
   const handlePress = (item) => {
     Alert.alert(`You pressed ${item}`);
   };
+
+  const [kierratysohjeet, setKierratysohjeet] = useState();
+
+  useEffect(()=>{
+    if (kierratysohjeet === '' && route.params?.kierratys) {
+      setKierratysohjeet(route.params.kierratys);
+    }
+  }, []);
+
 
   return (
     <View style={styles.container}>
@@ -20,6 +31,9 @@ const App = () => {
       />
       <View style={styles.grid}>
         <TouchableOpacity style={styles.gridItem} onPress={() => handlePress('Kierrätysohjeet')}>
+          <Pressable onPress={() => navigation.navigate('kierratysohjeet', {kierratys: kierratysohjeet})}>
+
+          </Pressable>
           <FontAwesome name="recycle" size={24} color="green" />
           <Text style={styles.gridText}>Kierrätysohjeet</Text>
         </TouchableOpacity>
@@ -40,50 +54,4 @@ const App = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 16,
-    borderWidth: 1,
-    borderColor: 'black',
-  },
-  title: {
-    color: 'green',
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
-  image: {
-    width: 100,
-    height: 100,
-    marginBottom: 24,
-  },
-  grid: {
-    width: '100%',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-  },
-  gridItem: {
-    width: '48%',
-    borderWidth: 1,
-    borderColor: 'black',
-    borderRadius: 8,
-    padding: 16,
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  gridText: {
-    color: 'green',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginTop: 8,
-  },
-  fullWidth: {
-    width: '100%',
-  },
-});
 export default App;

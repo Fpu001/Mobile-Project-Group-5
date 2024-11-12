@@ -6,7 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 export default etusivu = () => {
     return (
       <View style={styles.footer}>
-        <Text style={styles.author}>
+        <Text>
           Author: Frans Puranen
         </Text>
       </View>
