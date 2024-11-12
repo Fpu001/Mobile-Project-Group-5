@@ -3,6 +3,8 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import logo from './assets/logo.png';
+import etusivu from './components/etusivu';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const App = () => {
   const handlePress = (item) => {
@@ -84,5 +86,4 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
-
 export default App;
