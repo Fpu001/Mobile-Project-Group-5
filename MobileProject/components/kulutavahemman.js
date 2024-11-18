@@ -1,7 +1,7 @@
 import { useState, useEffect,} from 'react'
 import { Text, View } from 'react-native'
 
-export default kierratysohjeet = ({navigation, route}) => {
+export default kulutavahemman = ({navigation, route}) => {
 
     const [kulutavahemman, setKulutaVahemman] = useState('')
 
@@ -21,13 +21,11 @@ useEffect(()=>{
     <>
     <Header />
     <View> 
-      <Text style={styles.playerName}>
-      
-      kuluta vahemman {kierratysohjeet}
+      <Text>
+      kuluta vahemman {kulutavahemman}
       </Text>
     </View>
     <Footer />
     </>
   )
-
 }
