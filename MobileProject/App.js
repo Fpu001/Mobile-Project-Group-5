@@ -32,12 +32,13 @@ const App = ({navigation, route}) => {
       <View style={styles.grid}>
         <TouchableOpacity style={styles.gridItem} onPress={() => handlePress('Kierrätysohjeet')}>
           <Pressable onPress={() => navigation.navigate('kierratysohjeet', {kierratys: kierratysohjeet})}>
-
           </Pressable>
           <FontAwesome name="recycle" size={24} color="green" />
           <Text style={styles.gridText}>Kierrätysohjeet</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.gridItem} onPress={() => handlePress('Kuluta vähemmän')}>
+        <Pressable onPress={() => navigation.navigate('kulutavahemman', {kierratys: kierratysohjeet})}>
+        </Pressable>
           <Text style={styles.gridText}>Kuluta vähemmän</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.gridItem} onPress={() => handlePress('Tavoitteet')}>
