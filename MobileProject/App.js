@@ -7,6 +7,7 @@ import logo from './assets/logo.png';
 import styles from './style/style'
 import etusivu from './components/etusivu';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import kulutavahemman from './components/kulutavahemman';
 
 const App = ({navigation, route}) => {
   const handlePress = (item) => {
@@ -30,14 +31,14 @@ const App = ({navigation, route}) => {
         style={styles.image}
       />
       <View style={styles.grid}>
-        <TouchableOpacity style={styles.gridItem} onPress={() => handlePress('Kierrätysohjeet')}>
+        <TouchableOpacity style={styles.gridItem}>
           <Pressable onPress={() => navigation.navigate('kierratysohjeet', {kierratys: kierratysohjeet})}>
           </Pressable>
           <FontAwesome name="recycle" size={24} color="green" />
           <Text style={styles.gridText}>Kierrätysohjeet</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.gridItem} onPress={() => handlePress('Kuluta vähemmän')}>
-        <Pressable onPress={() => navigation.navigate('kulutavahemman', {kierratys: kierratysohjeet})}>
+        <TouchableOpacity style={styles.gridItem}>
+        <Pressable onPress={() => navigation.navigate('kulutavahemman', {kulutus: kulutavahemman})}>
         </Pressable>
           <Text style={styles.gridText}>Kuluta vähemmän</Text>
         </TouchableOpacity>
