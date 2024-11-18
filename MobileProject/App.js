@@ -27,7 +27,11 @@ const App = ({navigation, route}) => {
     }
   }, []);
 
-
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      return unsubscribe
+    })
+  }, [navigation])
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Go Green</Text>
