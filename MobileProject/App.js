@@ -8,6 +8,7 @@ import styles from './style/style'
 import etusivu from './components/etusivu';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import kulutavahemman from './components/kulutavahemman';
+import kierratysohjeet from './components/kierratysohjeet';
 
 const App = ({navigation, route}) => {
 
