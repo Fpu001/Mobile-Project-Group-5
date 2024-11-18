@@ -27,11 +27,11 @@ const App = ({navigation, route}) => {
     }
   }, []);
 
-  useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      return unsubscribe
-    })
-  }, [navigation])
+  // useEffect(() => {
+  //   const unsubscribe = navigation.addListener('focus', () => {
+  //     return unsubscribe
+  //   })
+  // }, [navigation])
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Go Green</Text>
@@ -47,7 +47,7 @@ const App = ({navigation, route}) => {
           <Text style={styles.gridText}>Kierrätysohjeet</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.gridItem}>
-        <Pressable onPress={() => navigation.navigate('kulutavahemman', {kulutus: kulutavahemman})}>
+        <Pressable onPress={() => navigation.navigate('kulutavahemman')}>
         </Pressable>
           <Text style={styles.gridText}>Kuluta vähemmän</Text>
         </TouchableOpacity>

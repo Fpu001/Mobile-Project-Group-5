@@ -5,11 +5,11 @@ export default kierratysohjeet = ({navigation, route}) => {
 
     const [kierratysohjeet, setKierratysohjeet] = useState('')
 
-    useEffect(() => {
-        const unsubscribe = navigation.addListener('focus', () => {
-          return unsubscribe
-        })
-      }, [navigation])
+    // useEffect(() => {
+    //     const unsubscribe = navigation.addListener('focus', () => {
+    //       return unsubscribe
+    //     })
+    //   }, [navigation])
 
     useEffect(()=>{
         if (kierratysohjeet === '' && route.params?.kierratys) {
