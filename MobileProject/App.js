@@ -10,15 +10,19 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import kulutavahemman from './components/kulutavahemman';
 
 const App = ({navigation, route}) => {
-  const handlePress = (item) => {
-    Alert.alert(`You pressed ${item}`);
-  };
 
   const [kierratysohjeet, setKierratysohjeet] = useState();
+  const [kulutavahemman, setKulutaVahemman] = useState();
 
   useEffect(()=>{
     if (kierratysohjeet === '' && route.params?.kierratys) {
       setKierratysohjeet(route.params.kierratys);
+    }
+  }, []);
+
+  useEffect(()=>{
+    if (kulutavahemman === '' && route.params?.kulutus) {
+      setKulutaVahemman(route.params.kulutus);
     }
   }, []);
 
@@ -42,13 +46,13 @@ const App = ({navigation, route}) => {
         </Pressable>
           <Text style={styles.gridText}>Kuluta vähemmän</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.gridItem} onPress={() => handlePress('Tavoitteet')}>
+        <TouchableOpacity style={styles.gridItem}>
           <Text style={styles.gridText}>Tavoitteet</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.gridItem} onPress={() => handlePress('Seuranta')}>
+        <TouchableOpacity style={styles.gridItem} >
           <Text style={styles.gridText}>Seuranta</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.gridItem, styles.fullWidth]} onPress={() => handlePress('Tietoja')}>
+        <TouchableOpacity style={[styles.gridItem, styles.fullWidth]}>
           <FontAwesome name="info-circle" size={24} color="green" />  
           <Text style={styles.gridText}>Tietoja</Text>
         </TouchableOpacity>
