@@ -1,29 +1,19 @@
 import { useState, useEffect,} from 'react'
 import { Text, View } from 'react-native'
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-export default kierratysohjeet = ({navigation, route}) => {
+export default Kierratysohjeet = ({navigation, route}) => {
 
-    const [kierratysohjeet, setKierratysohjeet] = useState('')
 
-    // useEffect(() => {
-    //     const unsubscribe = navigation.addListener('focus', () => {
-    //       return unsubscribe
-    //     })
-    //   }, [navigation])
-
-    useEffect(()=>{
-        if (kierratysohjeet === '' && route.params?.kierratys) {
-          setKierratysohjeet(route.params.kierratys);
-        }
-      }, []);
 
     return (
         <>
         <Header />
         <View> 
-          <Text style={styles.playerName}>
+          <Text>
           
-          kierratysohjeet: {kierratysohjeet}
+          
           </Text>
         </View>
         <Footer />

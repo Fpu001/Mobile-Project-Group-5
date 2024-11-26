@@ -47,4 +47,11 @@ export default StyleSheet.create({
         width: '100%',
       },
 
+      bmburgerbars: {
+        background: "black"
+      },
+      
+      bmburgerbarshover: {
+        background: "red"
+      }
 })

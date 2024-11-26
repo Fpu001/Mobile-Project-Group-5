@@ -3,7 +3,7 @@ import { Text, View } from 'react-native'
 import styles from '../style/style'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default etusivu = () => {
+export default Etusivu = () => {
     return (
       <View style={styles.footer}>
         <Text>
