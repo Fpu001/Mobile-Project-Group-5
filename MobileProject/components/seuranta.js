@@ -1,18 +1,8 @@
-import { Text, View } from 'react-native'
-import Header from './header'
-import Footer from './footer'
+import React from 'react'
+
 
 export default Seuranta = () => {
-
-return(
-    <>
-    <Header />
-    <View> 
-      <Text>
-    gfdg
-      </Text>
-    </View>
-    <Footer />
-    </>
-)
-}
+    return (
+     <div>Seuranta</div>
+    )
+  }

@@ -7,16 +7,19 @@ import HamburgerMenu from "./components/HamburgerMenu";
 import logo from './assets/logo.png';
 import "./style/app.css"
 import styles from './style/style'
-import Etusivu from './components/Etusivu';
-import Seuranta from './components/Seuranta';
-import Tavoitteet from './components/Tavoitteet'
-import Kulutavahemman from './components/Kulutavahemman';
-import Kierratysohjeet from './components/Kierratysohjeet';
+
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Router, Switch, Route } from 'react-router';
-
+import {Router, Switch, Route, Link } from 'react-router';
+import ReactDOM from "react-dom/client"
+import { BrowserRouter, Routes } from 'react-router';
+import Etusivu from './components/Etusivu';
+import Kulutavahemman from './components/Kulutavahemman';
+import Kierratysohjeet from './components/Kierratysohjeet';
+import Seuranta from './components/Seuranta';
+import Tavoitteet from './components/Tavoitteet'
+import Tietoja from './components/tietoja';
 const Stack = createNativeStackNavigator();
 
 const MyTheme = {
@@ -29,67 +32,64 @@ const MyTheme = {
 };
 const App = () => { 
 
+  
 
-  const Etusivu = ({navigation}) => {
-    return (
-    <Button title='kuluta vähemmän' 
-    onPress={() => navigation.navigate('Kulutavahemman', {name: 'kuluta vähemmän'})}
-    />
-    )
-    }
-    const Kulutavahemman = ({navigation, route}) => {
-      return (
-      <Button title='Seuranta' style={styles.grid}
-      onPress={() => navigation.navigate('Seuranta', {name: 'Seuranta'})}
-    /> 
-      )
-      }
-  const Kierratysohjeet = ({navigation, route}) => {
-    return (
-    <Button title='Seuranta' style={styles.grid}
-    onPress={() => navigation.navigate('Seuranta', {name: 'Seuranta'})}
-  /> 
-    )
-    }
-    const Seuranta = ({navigation, route}) => {
-      return (
-      <Button title='Tavoitteet' style={styles.grid}
-      onPress={() => navigation.navigate('Tavoitteet', {name: 'Tavoitteet'})}
-    />
-    )
-    }
-    const Tavoitteet = ({navigation, route}) => {
-      return (
-      <Button title='Tietoja' style={styles.grid}
-      onPress={() => navigation.navigate('Tietoja', {name: 'Tietoja'})}
-    />
-    )
-    }
-    const Tietoja = ({navigation, route}) => {
-      return (
-      <Button title='Etusivu' style={styles.grid}
-      onPress={() => navigation.navigate('Etusivu', {name: 'Etusivu'})}
-    />
-    )
-    }
+  
+
+const Navigation = () => {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Etusivu</Link>
+        </li>
+        <li>
+          <Link to="/Kierratysohjeet">Kierrätysohjeet</Link>
+        </li>
+        <li>
+          <Link to="/Kulutavahemman">Kuluta vähemmän</Link>
+        </li>
+        <li>
+          <Link to="/Tietoja">Tietoja</Link>
+        </li>
+        <li>
+          <Link to="/Tavoitteet">Tavoitteet</Link>
+        </li>
+        <li>
+          <Link to="/Seuranta">Seuranta</Link>
+        </li>
+      </ul>
+    </nav>
+  )
+}
  
 return (  
-  <>
   <Router>
-    <HamburgerMenu />
-    <div className="components">
-      <Switch>
-       <Route exact path="/" component={Etusivu} />
-       <Route path="/Kierratysohjeet" component={Kierratysohjeet}/>
-       <Route path="/Kulutavahemman" component={Kulutavahemman}/>
-       <Route path="/Seuranta" component={Seuranta}/>
-       <Route path="/Tavoitteet" component={Tavoitteet}/>
-       <Route path="/Tietoja" component={Tietoja}/>
-      </Switch>
-    </div>
-  </Router>
+  <Switch>
+    <Route path="/" exact component={Etusivu} />
+    <Route path="/Kierratysohjeet" component={Kierratysohjeet} />
+    <Route path="/Kulutavahemman" component={Kulutavahemman} />
+    <Route path="/Tietoja" component={Tietoja} />
+    <Route path="/Tavoitteet" component={Tavoitteet} />
+    <Route path="/Seuranta" component={Seuranta} />
+  </Switch>
+</Router>
+  // <>
+  // <Router>
+  //   <HamburgerMenu />
+  //   <div className="components">
+  //     <Switch>
+  //      <Route exact path="/" component={Etusivu} />
+  //      <Route path="/Kierratysohjeet" component={Kierratysohjeet}/>
+  //      <Route path="/Kulutavahemman" component={Kulutavahemman}/>
+  //      <Route path="/Seuranta" component={Seuranta}/>
+  //      <Route path="/Tavoitteet" component={Tavoitteet}/>
+  //      <Route path="/Tietoja" component={Tietoja}/>
+  //     </Switch>
+  //   </div>
+  // </Router>
 
-    <NavigationContainer style={styles.grid}>
+    /* <NavigationContainer style={styles.grid}>
       <Stack.Navigator style={styles.gridText}>
           <Stack.Screen name="Etusivu" component={Etusivu} options={{title: 'Etusivu'}}/>
           <Stack.Screen name="Kierratysohjeet" component={Kierratysohjeet} options={{title: 'Kierrätysohjeet'}}/>
@@ -98,8 +98,7 @@ return (
           <Stack.Screen name="Tavoitteet" component={Tavoitteet} options={{title: 'Tavoitteet'}}/>
           <Stack.Screen name="Tietoja" component={Tietoja} options={{title: 'Tietoja'}}/>
       </Stack.Navigator>
-    </NavigationContainer>  
-</>
+    </NavigationContainer>   */
 );
 };
 export default App;

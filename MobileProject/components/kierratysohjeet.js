@@ -1,22 +1,8 @@
-import { useState, useEffect,} from 'react'
-import { Text, View } from 'react-native'
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-export default Kierratysohjeet = ({navigation, route}) => {
+import React from 'react'
 
 
-
+export default Kierratysohjeet = () => {
     return (
-        <>
-        <Header />
-        <View> 
-          <Text>
-          
-          
-          </Text>
-        </View>
-        <Footer />
-        </>
-      )
-}
+     <div>Kierrätysohjeet</div>
+    )
+  }

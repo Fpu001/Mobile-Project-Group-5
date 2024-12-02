@@ -1,18 +1,8 @@
-import { Text, View } from 'react-native'
-import Header from './header'
-import Footer from './footer'
+import React from 'react'
 
-export default Tavoitteet = ({navigation, route}) => {
 
-return(
-    <>
-    <Header />
-    <View> 
-      <Text>
- 
-      </Text>
-    </View>
-    <Footer />
-    </>
-)
-}
+export default Tavoitteet = () => {
+    return (
+     <div>Tavoitteet</div>
+    )
+  }
