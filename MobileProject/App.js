@@ -1,79 +1,86 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { useEffect, useState } from 'react'
-import { View, Text, Image, TouchableOpacity, Alert, Pressable, Button} from 'react-native';
+import * as React from 'react';
+import { View, Text} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import HamburgerMenu from "./components/HamburgerMenu";
 import logo from './assets/logo.png';
 import "./style/app.css"
-import styles from './style/style'
-
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
+import style from './style/style'
+import { useEffect, useState } from 'react'
+//import { MaterialCommunityIcons } from '@expo/vector-icons';
+// import Seuranta from './components/Seuranta';
+// import Tavoitteet from './components/Tavoitteet'
+// import Tietoja from './components/Tietoja';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Router, Switch, Route, Link } from 'react-router';
-import ReactDOM from "react-dom/client"
-import { BrowserRouter, Routes } from 'react-router';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { Button } from '@react-navigation/elements';
 import Etusivu from './components/Etusivu';
 import Kulutavahemman from './components/Kulutavahemman';
-import Kierratysohjeet from './components/Kierratysohjeet';
-import Seuranta from './components/Seuranta';
-import Tavoitteet from './components/Tavoitteet'
-import Tietoja from './components/tietoja';
-const Stack = createNativeStackNavigator();
 
-const MyTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    background: 'white',
-    primary: 'rgb(255, 45, 85)',
-  },
-};
-const App = () => { 
+// const MyTheme = {
+//   ...DefaultTheme,
+//   colors: {
+//     ...DefaultTheme.colors,
+//     background: 'white',
+//     primary: 'rgb(255, 45, 85)',
+//   },
+// };
 
-  
 
-  
-
-const Navigation = () => {
-  return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Etusivu</Link>
-        </li>
-        <li>
-          <Link to="/Kierratysohjeet">Kierrätysohjeet</Link>
-        </li>
-        <li>
-          <Link to="/Kulutavahemman">Kuluta vähemmän</Link>
-        </li>
-        <li>
-          <Link to="/Tietoja">Tietoja</Link>
-        </li>
-        <li>
-          <Link to="/Tavoitteet">Tavoitteet</Link>
-        </li>
-        <li>
-          <Link to="/Seuranta">Seuranta</Link>
-        </li>
-      </ul>
-    </nav>
+ Etusivu = () => {
+  const navigation = useNavigation();
+  return(
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>Etusivu</Text>
+    <Button onPress={() => navigation.navigate('Kulutavahemman')}>
+      Kuluta vähemmän
+    </Button>
+  </View>
   )
 }
- 
-return (  
-  <Router>
-  <Switch>
-    <Route path="/" exact component={Etusivu} />
-    <Route path="/Kierratysohjeet" component={Kierratysohjeet} />
-    <Route path="/Kulutavahemman" component={Kulutavahemman} />
-    <Route path="/Tietoja" component={Tietoja} />
-    <Route path="/Tavoitteet" component={Tavoitteet} />
-    <Route path="/Seuranta" component={Seuranta} />
-  </Switch>
-</Router>
+
+Kulutavahemman = () => {
+  const navigation = useNavigation();
+  return(
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>Kuluta vähemmän
+    </Text>
+    <Button onPress={() => navigation.navigate('Kulutavahemman')}>
+        Go to Details... again
+      </Button>
+      <Button onPressIn={() => navigation.goBack()}>Takaisin</Button>
+  </View>
+  )
+}
+const Stack = createNativeStackNavigator();
+
+RootStack = () => {
+  return(
+    <Stack.Navigator initialRouteName='Etusivu'>
+      <Stack.Screen 
+      name='Etusivu' 
+      component={Etusivu}
+      options={{title: 'Overview'}} />
+      <Stack.Screen name='Kuluta vähemmän' component={Kulutavahemman} />
+    </Stack.Navigator>
+  )
+}
+export default function App() {
+return(
+<NavigationContainer>
+  <RootStack />
+</NavigationContainer>
+);
+}
+
+//   <Router>
+//   <Switch>
+//     <Route path="/" exact component={Etusivu} />
+//     <Route path="/Kierratysohjeet" component={Kierratysohjeet} />
+//     <Route path="/Kulutavahemman" component={Kulutavahemman} />
+//     <Route path="/Tietoja" component={Tietoja} />
+//     <Route path="/Tavoitteet" component={Tavoitteet} />
+//     <Route path="/Seuranta" component={Seuranta} />
+//   </Switch>
+// </Router>
   // <>
   // <Router>
   //   <HamburgerMenu />
@@ -99,10 +106,6 @@ return (
           <Stack.Screen name="Tietoja" component={Tietoja} options={{title: 'Tietoja'}}/>
       </Stack.Navigator>
     </NavigationContainer>   */
-);
-};
-export default App;
-
   // useEffect(()=>{
   //   if (kierratysohjeet === '' && route.params?.kierratys) {
   //     setKierratysohjeet(route.params.kierratys);
@@ -115,8 +118,6 @@ export default App;
   //   }
   // }, []);
 
-
-  
     //  <View>
     //   <Text style={styles.title}>Go Green/</Text>
     //   <Image

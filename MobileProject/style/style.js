@@ -53,5 +53,8 @@ export default StyleSheet.create({
       
       bmburgerbarshover: {
         background: "red"
+      },
+      button: {
+        width: "50%"
       }
 })
