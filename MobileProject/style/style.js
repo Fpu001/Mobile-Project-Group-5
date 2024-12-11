@@ -6,10 +6,7 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-        padding: 16,
-        borderWidth: 1,
-        borderColor: 'black',
+        justifyContent: 'center'
       },
       title: {
         color: 'green',
@@ -18,9 +15,8 @@ export default StyleSheet.create({
         marginBottom: 16,
       },
       image: {
-        width: 100,
-        height: 100,
-        marginBottom: 24,
+        width: 150,
+        height: 150,
       },
       grid: {
         width: '100%',

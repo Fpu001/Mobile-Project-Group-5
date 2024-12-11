@@ -4,10 +4,10 @@ import logo from '../assets/logo.png'
 import style from '../style/style';
 const Etusivu = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={style.container}>
       <Image 
         source={logo} 
-        style={{ width: 100, height: 100, marginBottom: 10 }} 
+        style={style.image} 
       />
       <Text style={style.title}>Go green</Text>
       <Button

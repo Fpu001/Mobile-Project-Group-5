@@ -7,42 +7,55 @@ import Kierratysohjeet from './components/kierratysohjeet';
 import Seuranta from './components/seuranta';
 import Tietoja from './components/tietoja';
 import Tavoitteet from './components/tavoitteet';
-
+import Header from './components/header';
 
 const Stack = createNativeStackNavigator();
 
 const RootStack = () => {
   return (
     <Stack.Navigator initialRouteName="Etusivu">
-      <Stack.Screen 
-        name="Etusivu" 
-        component={Etusivu} 
-        options={{ title: 'Overview' }} 
-      />
+    <Stack.Screen 
+      name="Etusivu" 
+      component={Etusivu} 
+      options={{
+        title: 'Etusivu',
+        headerRight: () => <Header /> 
+      }} 
+    />
       <Stack.Screen 
         name="Kulutavahemman" 
         component={Kulutavahemman} 
-        options={{ title: 'Kuluta vähemmän' }} 
+        options={{ title: 'Kuluta vähemmän',
+        headerRight: () => <Header />  
+        }} 
       />
       <Stack.Screen 
         name="Kierratysohjeet" 
         component={Kierratysohjeet} 
-        options={{ title: 'Kierrätysohjeet' }} 
+        options={{ title: 'Kierrätysohjeet',
+        headerRight: () => <Header />  
+         }} 
       />
       <Stack.Screen 
         name="Seuranta" 
         component={Seuranta} 
-        options={{ title: 'Seuranta' }} 
+        options={{ title: 'Seuranta',
+          headerRight: () => <Header />  
+         }} 
       />
       <Stack.Screen 
         name="Tietoja" 
         component={Tietoja} 
-        options={{ title: 'Tietoja' }} 
+        options={{ title: 'Tietoja',
+          headerRight: () => <Header />  
+         }} 
       />
       <Stack.Screen 
         name="Tavoitteet" 
         component={Tavoitteet} 
-        options={{ title: 'Tavoitteet' }} 
+        options={{ title: 'Tavoitteet',
+          headerRight: () => <Header />  
+         }} 
       />
     </Stack.Navigator>
   );
