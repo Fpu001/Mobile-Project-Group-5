@@ -1,74 +1,34 @@
-import * as React from 'react';
-import { View, Text} from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-import logo from './assets/logo.png';
-import "./style/app.css"
-import style from './style/style'
-import { useEffect, useState } from 'react'
-//import { MaterialCommunityIcons } from '@expo/vector-icons';
-// import Seuranta from './components/Seuranta';
-// import Tavoitteet from './components/Tavoitteet'
-// import Tietoja from './components/Tietoja';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { Button } from '@react-navigation/elements';
-import Etusivu from './components/Etusivu';
-import Kulutavahemman from './components/Kulutavahemman';
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Etusivu from './components/etusivu'; 
+import Kulutavahemman from './components/kulutavahemman'; 
 
-// const MyTheme = {
-//   ...DefaultTheme,
-//   colors: {
-//     ...DefaultTheme.colors,
-//     background: 'white',
-//     primary: 'rgb(255, 45, 85)',
-//   },
-// };
-
-
- Etusivu = () => {
-  const navigation = useNavigation();
-  return(
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Etusivu</Text>
-    <Button onPress={() => navigation.navigate('Kulutavahemman')}>
-      Kuluta vähemmän
-    </Button>
-  </View>
-  )
-}
-
-Kulutavahemman = () => {
-  const navigation = useNavigation();
-  return(
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Kuluta vähemmän
-    </Text>
-    <Button onPress={() => navigation.navigate('Kulutavahemman')}>
-        Go to Details... again
-      </Button>
-      <Button onPressIn={() => navigation.goBack()}>Takaisin</Button>
-  </View>
-  )
-}
 const Stack = createNativeStackNavigator();
 
-RootStack = () => {
-  return(
-    <Stack.Navigator initialRouteName='Etusivu'>
+const RootStack = () => {
+  return (
+    <Stack.Navigator initialRouteName="Etusivu">
       <Stack.Screen 
-      name='Etusivu' 
-      component={Etusivu}
-      options={{title: 'Overview'}} />
-      <Stack.Screen name='Kuluta vähemmän' component={Kulutavahemman} />
+        name="Etusivu" 
+        component={Etusivu} 
+        options={{ title: 'Overview' }} 
+      />
+      <Stack.Screen 
+        name="Kulutavahemman" 
+        component={Kulutavahemman} 
+        options={{ title: 'Kuluta vähemmän' }} 
+      />
     </Stack.Navigator>
-  )
-}
+  );
+};
+
 export default function App() {
-return(
-<NavigationContainer>
-  <RootStack />
-</NavigationContainer>
-);
+  return (
+    <NavigationContainer>
+      <RootStack />
+    </NavigationContainer>
+  );
 }
 
 //   <Router>
