@@ -3,6 +3,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Etusivu from './components/etusivu'; 
 import Kulutavahemman from './components/kulutavahemman'; 
+import Kierratysohjeet from './components/kierratysohjeet';
+import Seuranta from './components/seuranta';
+import Tietoja from './components/tietoja';
+import Tavoitteet from './components/tavoitteet';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +23,26 @@ const RootStack = () => {
         name="Kulutavahemman" 
         component={Kulutavahemman} 
         options={{ title: 'Kuluta vähemmän' }} 
+      />
+      <Stack.Screen 
+        name="Kierratysohjeet" 
+        component={Kierratysohjeet} 
+        options={{ title: 'Kierrätysohjeet' }} 
+      />
+      <Stack.Screen 
+        name="Seuranta" 
+        component={Seuranta} 
+        options={{ title: 'Seuranta' }} 
+      />
+      <Stack.Screen 
+        name="Tietoja" 
+        component={Tietoja} 
+        options={{ title: 'Tietoja' }} 
+      />
+      <Stack.Screen 
+        name="Tavoitteet" 
+        component={Tavoitteet} 
+        options={{ title: 'Tavoitteet' }} 
       />
     </Stack.Navigator>
   );
