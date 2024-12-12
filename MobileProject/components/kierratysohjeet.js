@@ -40,8 +40,7 @@ const Kierratysohjeet = ({ navigation }) => {
       <Image
         source={sekajate}
         style={style.recycleIcons}
-      /><p>
-      </p>
+        />
       <Button 
         title="Takaisin" 
         onPress={() => navigation.goBack()} 

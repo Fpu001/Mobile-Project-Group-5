@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Button, Image } from 'react-native';
-import logo from '../assets/logo.png'
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import logo from '../assets/logo.png';
 import style from '../style/style';
+
 const Etusivu = ({ navigation }) => {
   return (
     <View style={style.container}>
@@ -10,29 +11,44 @@ const Etusivu = ({ navigation }) => {
         style={style.image} 
       />
       <Text style={style.title}>Go green</Text>
-      <View style={style.button}>
-      <Button
-        title="Kuluta vähemmän"
-        onPress={() => navigation.navigate('Kulutavahemman')} 
-      /><p>
-      <Button
-        title="Kierrätysohjeet"
-        onPress={() => navigation.navigate('Kierratysohjeet')} 
-      /></p>
-      <Button
-        title="Tavoitteet"
-        onPress={() => navigation.navigate('Tavoitteet')} 
-      /><p>
-      <Button
-        title="Seuranta"
-        onPress={() => navigation.navigate('Seuranta')} 
-      /><p>
-        <Button
-        title="Tietoja"
-        onPress={() => navigation.navigate('Tietoja')} 
-      /></p></p></View>
+
+      <TouchableOpacity 
+        style={style.button} 
+        onPress={() => navigation.navigate('Kulutavahemman')}
+      >
+        <Text style={style.buttonText}>Kuluta vähemmän</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        style={style.button} 
+        onPress={() => navigation.navigate('Kierratysohjeet')}
+      >
+        <Text style={style.buttonText}>Kierrätysohjeet</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        style={style.button} 
+        onPress={() => navigation.navigate('Tavoitteet')}
+      >
+        <Text style={style.buttonText}>Tavoitteet</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        style={style.button} 
+        onPress={() => navigation.navigate('Seuranta')}
+      >
+        <Text style={style.buttonText}>Seuranta</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        style={style.button} 
+        onPress={() => navigation.navigate('Tietoja')}
+      >
+        <Text style={style.buttonText}>Tietoja</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
 export default Etusivu;
+

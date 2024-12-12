@@ -7,7 +7,7 @@ const Tietoja = ({ navigation }) => {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={style.title}>Tietoja</Text>
       <Text style={style.text}>Tekijät:</Text>
-      <Text style={style.text}>Anni Pesonen, Miro Säkkinen, Frans Puranen</Text><p></p>
+      <Text style={style.text}>Anni Pesonen, Miro Säkkinen, Frans Puranen</Text>
       <Text style={style.text}>Lähteet:</Text>
       <Text style={style.text}>https://salpakierto.fi</Text>
       <Button 

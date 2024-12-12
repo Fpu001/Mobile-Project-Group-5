@@ -60,8 +60,18 @@ export default StyleSheet.create({
         background: "red"
       },
       button: {
-        width: "25%",
-        height: "25%",
+        backgroundColor: '#23AE23',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 5,
+        marginVertical: 10,
+        alignItems: 'center',
+        width: 200, 
+      },
+      buttonText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold',
       },
       
 })
