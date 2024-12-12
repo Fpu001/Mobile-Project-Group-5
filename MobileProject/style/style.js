@@ -9,14 +9,23 @@ export default StyleSheet.create({
         justifyContent: 'center'
       },
       title: {
-        color: 'green',
+        color: '#23AE23',
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 16,
       },
+      text: {
+        color: '#23AE23',
+        fontWeight: 'bold',
+        fontSize: 15
+      },
       image: {
         width: 150,
         height: 150,
+      },
+      recycleIcons: {
+        width: 50,
+        height: 50,
       },
       grid: {
         width: '100%',
@@ -51,6 +60,8 @@ export default StyleSheet.create({
         background: "red"
       },
       button: {
-        width: "50%"
-      }
+        width: "25%",
+        height: "25%",
+      },
+      
 })

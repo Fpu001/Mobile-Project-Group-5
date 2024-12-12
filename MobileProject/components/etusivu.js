@@ -10,26 +10,27 @@ const Etusivu = ({ navigation }) => {
         style={style.image} 
       />
       <Text style={style.title}>Go green</Text>
+      <View style={style.button}>
       <Button
         title="Kuluta vähemmän"
         onPress={() => navigation.navigate('Kulutavahemman')} 
-      />
+      /><p>
       <Button
         title="Kierrätysohjeet"
         onPress={() => navigation.navigate('Kierratysohjeet')} 
-      />
+      /></p>
       <Button
         title="Tavoitteet"
         onPress={() => navigation.navigate('Tavoitteet')} 
-      />
+      /><p>
       <Button
         title="Seuranta"
         onPress={() => navigation.navigate('Seuranta')} 
-      />
+      /><p>
         <Button
         title="Tietoja"
         onPress={() => navigation.navigate('Tietoja')} 
-      />
+      /></p></p></View>
     </View>
   );
 };
