@@ -73,5 +73,36 @@ export default StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
       },
+      radioButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 10,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+      },
+      radioButtonSelected: {
+        borderColor: '#007BFF',
+      },
+      radioCircle: {
+        height: 20,
+        width: 20,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#007BFF',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginRight: 10,
+      },
+      radioInnerCircle: {
+        height: 10,
+        width: 10,
+        borderRadius: 5,
+        backgroundColor: '#007BFF',
+      },
+      radioText: {
+        fontSize: 16,
+      },
       
 })

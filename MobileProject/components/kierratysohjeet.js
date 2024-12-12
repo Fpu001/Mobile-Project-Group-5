@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import biojate from '../assets/biojate.png';
 import kartonki from '../assets/kartonki.png';
 import lasi from '../assets/lasi.png'
@@ -41,10 +41,10 @@ const Kierratysohjeet = ({ navigation }) => {
         source={sekajate}
         style={style.recycleIcons}
         />
-      <Button 
-        title="Takaisin" 
-        onPress={() => navigation.goBack()} 
-      />
+      <TouchableOpacity style={style.button}
+        onPress={() => navigation.goBack()}> 
+        <Text style={style.buttonText}>Takaisin</Text>
+      </TouchableOpacity>
     </View>
   );
 };
