@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import biojate from '../assets/biojate.png';
 import kartonki from '../assets/kartonki.png';
 import lasi from '../assets/lasi.png'
@@ -13,34 +13,41 @@ const Kierratysohjeet = ({ navigation }) => {
   return (
     <View style={style.container}>
       <Text style={style.title}>Kierrätysohjeet</Text>
-      <Image
+        <Image
         source={biojate}
         style={style.recycleIcons}
       />
+      <Text></Text>
       <Image
         source={kartonki}
         style={style.recycleIcons}
       />
+      <Text></Text>
       <Image
         source={lasi}
         style={style.recycleIcons}
       />
+      <Text></Text>
       <Image
         source={metalli}
         style={style.recycleIcons}
       />
+      <Text></Text>
       <Image
         source={muovi}
         style={style.recycleIcons}
       />
+      <Text></Text>
       <Image
         source={paperi}
         style={style.recycleIcons}
       />
+      <Text></Text>
       <Image
         source={sekajate}
         style={style.recycleIcons}
         />
+        <Text></Text>
       <TouchableOpacity style={style.button}
         onPress={() => navigation.goBack()}> 
         <Text style={style.buttonText}>Takaisin</Text>

@@ -60,16 +60,17 @@ export default StyleSheet.create({
         background: "red"
       },
       button: {
-        backgroundColor: '#23AE23',
+        backgroundColor: '#fff',
         paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: 5,
         marginVertical: 10,
         alignItems: 'center',
         width: 200, 
+        borderWidth: 1
       },
       buttonText: {
-        color: '#fff',
+        color: '#23AE23',
         fontSize: 16,
         fontWeight: 'bold',
       },
@@ -104,5 +105,10 @@ export default StyleSheet.create({
       radioText: {
         fontSize: 16,
       },
+      itemText: {
+        borderWidth: 1,
+        borderColor: 'black',
+        width: '50%'
+      }
       
 })
