@@ -109,7 +109,7 @@ const Seuranta = ({ navigation }) => {
             <Progress.Bar 
               progress={progress} 
               width={200} 
-              color="blue" 
+              color="green" 
               borderRadius={5} 
             />
             <Text style={style.savingsText}>{`${Math.round(progress * 100)}% saavutettu`}</Text>
@@ -192,7 +192,7 @@ const Seuranta = ({ navigation }) => {
             <Progress.Bar 
               progress={waterProgress} 
               width={200} 
-              color="purple" 
+              color="green" 
               borderRadius={5} 
             />
             <Text style={style.savingsText}>{`${Math.round(waterProgress * 100)}% saavutettu`}</Text>
@@ -214,7 +214,7 @@ const Seuranta = ({ navigation }) => {
       data={[1]} 
       renderItem={() => (
         <View style={style.container}>
-          <Text style={style.title}>Seurantatavoitteet</Text>
+          <Text style={style.title}>Tavoitteiden seuranta</Text>
           <Text style={style.text}>
             {goal ? `Valitsemasi tavoite: ${goal}` : 'Ei tavoitetta valittu'}
           </Text>

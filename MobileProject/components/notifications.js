@@ -1,16 +1,7 @@
 import PushNotification from 'react-native-push-notification';
 import { Platform } from 'react-native';
 
-// Käsittele ilmoituksia, kun ne saapuvat
-PushNotification.configure({
-  onNotification: function (notification) {
-    console.log('NOTIFICATION:', notification);
-  },
-  popInitialNotification: true,
-  requestPermissions: Platform.OS === 'ios', // Request permissions for iOS only
-});
-
-// Pyydä lupaa ilmoituksille
+// Pyydä lupaa ilmoituksille (vain iOS)
 export const requestNotificationPermission = async () => {
   if (Platform.OS === 'ios') {
     const permissionStatus = await PushNotification.requestPermissions();
@@ -22,7 +13,7 @@ export const requestNotificationPermission = async () => {
   return true;
 };
 
-// Aikatauluta päivittäinen ilmoitus
+// Aikatauluta ilmoitus tietyllä kellonajalla
 export const scheduleDailyReminder = async () => {
   const hasPermission = await requestNotificationPermission();
   if (!hasPermission) return;
@@ -30,17 +21,23 @@ export const scheduleDailyReminder = async () => {
   // Peruuta vanhat muistutukset
   PushNotification.cancelAllLocalNotifications();
 
-  // Aikatauluta uusi muistutus
+  // Hae nykyinen päivä ja aseta haluttu kellonaika
+  const now = new Date();
+  const reminderTime = new Date(now.setHours(17, 48, 0, 0)); // Aseta kellonajaksi 17:48
+
+  // Aikatauluta muistutus tietylle kellonajalle joka päivä
   PushNotification.localNotificationSchedule({
     title: 'Muistutus päivittää edistymistäsi',
     message: 'Älä unohda päivittää tavoitteesi edistymistä tänään!',
-    date: new Date(Date.now() + 10 * 1000), // Välitön muistutus (testausta varten)
-    repeatType: 'day', // Toistuu päivittäin
-    repeatTime: 1, // Toistuu kerran päivässä
-    // Trigger at 1:40 PM
+    date: reminderTime,  // Määritä ilmoituksen ajankohta
+    repeatType: 'day',   // Toistuu päivittäin
+    repeatTime: 1,       // Toistuu kerran päivässä
     userInfo: { id: 'dailyReminder' },
-    allowWhileIdle: true, // Allows notification even when the app is idle
+    allowWhileIdle: true, // Mahdollistaa ilmoituksen, vaikka sovellus on taustalla
   });
 
   alert('Päivittäinen muistutus on asetettu!');
 };
+
+
+

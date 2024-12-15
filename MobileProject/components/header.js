@@ -11,7 +11,7 @@ const Header = () => {
       onPress={() => navigation.navigate('Etusivu')} 
       style={{ marginLeft: 10 }}
     >
-      <Icon name="home" size={30} color="#007AFF" /> 
+      <Icon name="home" size={30} color="#23AE23" /> 
     </TouchableOpacity>
   );
 };

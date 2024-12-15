@@ -162,5 +162,49 @@ export default StyleSheet.create({
         color: '#23AE23',
         fontSize: 16,
         fontWeight: 'bold',
-      }
+      },
+      modalContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Läpinäkyvä tausta
+      },
+      modalContent: {
+        backgroundColor: 'white',
+        padding: 20,
+        borderRadius: 10,
+        width: '80%',
+        height: '60%',
+        alignItems: 'center',
+      },
+      modalTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 10,
+      },
+      modalText: {
+        fontSize: 16,
+        textAlign: 'center',
+        marginBottom: 20,
+      },
+      closeButton: {
+        backgroundColor: '#007BFF',
+        padding: 10,
+        borderRadius: 5,
+      },
+      closeButtonText: {
+        color: 'white',
+        fontSize: 16,
+      },
+      recycleText: {
+        color: '#23AE23',
+        fontWeight: 'bold',
+        fontSize: 15,
+        padding: 20
+      },
+      iconWithTextContainer: {
+        flexDirection: 'row', // Asettaa tekstin ja kuvan vierekkäin
+        alignItems: 'center', // Keskittää elementit pystysuunnassa
+        justifyContent: 'flex-start', // Asettaa elementit vasempaan laitaan
+      },
 })
