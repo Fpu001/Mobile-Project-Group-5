@@ -10,15 +10,18 @@ const Tavoitteet = ({ navigation }) => {
   const goals = [
     {
       name: 'Kasvisateriatavoite',
-      description: 'Kasvisateriatavoite auttaa vähentämään lihantuotannon ympäristövaikutuksia ja parantaa terveyttä.'
+      description: 'Tavoite: Syö 5 kasvisateriaa viikossa. \n'
+      + 'Kasvisateriatavoite auttaa vähentämään lihantuotannon ympäristövaikutuksia ja parantaa terveyttä.'
     },
     {
       name: 'Ympäristöystävällinen kulkutapa',
-      description: 'Tämä tavoite kannustaa valitsemaan kestävämpiä kulkutapoja, kuten pyöräilyä tai julkista liikennettä.'
+      description: 'Tavoite: Käytä ympäristöystävällistä kulkutapaa 3 päivänä viikossa. \n' + 
+      'Tämä tavoite kannustaa valitsemaan kestävämpiä kulkutapoja, kuten pyöräilyä tai julkista liikennettä.'
     },
     {
       name: 'Vedenkulutuksen vähentäminen',
-      description: 'Vedenkulutuksen vähentäminen on tärkeää luonnonvarojen säästämiseksi ja ympäristön suojelun edistämiseksi.'
+      description: 'Tavoite: Pidä suihkut alle 5minuutin kestoisina viidesti viikossa. \n' + 
+      'Vedenkulutuksen vähentäminen on tärkeää luonnonvarojen säästämiseksi ja ympäristön suojelun edistämiseksi.'
     }
   ];
 
@@ -63,11 +66,11 @@ const Tavoitteet = ({ navigation }) => {
         </View>
       )}
 
-      <Button 
-        title="Tallenna" 
+      <TouchableOpacity style={style.button}
         onPress={saveGoal}
-        disabled={!selectedGoal} // Estää napin käytön, jos mitään ei ole valittu
-      />
+        disabled={!selectedGoal}>
+        <Text style={style.saveButtonText}>Tallenna</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity style={style.button}
         onPress={() => navigation.goBack()}> 

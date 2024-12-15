@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, FlatList, Alert } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, FlatList, Alert, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Progress from 'react-native-progress';
 import { Picker } from '@react-native-picker/picker';
@@ -18,46 +18,66 @@ const Seuranta = ({ navigation }) => {
   const [waterProgress, setWaterProgress] = useState(0);
 
   useEffect(() => {
-    const fetchGoal = async () => {
+    const fetchGoalAndProgress = async () => {
       try {
         const storedGoal = await AsyncStorage.getItem('selectedGoal');
-        if (storedGoal) {
-          setGoal(storedGoal);
-        } else {
-          setGoal('Ei tavoitetta valittu');
-        }
+        const storedMeals = JSON.parse(await AsyncStorage.getItem('meals')) || [];
+        const storedTravelModes = JSON.parse(await AsyncStorage.getItem('travelModes')) || [];
+        const storedShowers = JSON.parse(await AsyncStorage.getItem('showers')) || [];
+
+        setGoal(storedGoal || 'Ei tavoitetta valittu');
+        setMeals(storedMeals);
+        setTravelModes(storedTravelModes);
+        setShowers(storedShowers);
+
+        // Lasketaan edistyminen tallennetuista tiedoista
+        setProgress(Math.min(storedMeals.length * 0.2, 1));
+        setTravelProgress(Math.min(storedTravelModes.length * 0.333, 1));
+        setWaterProgress(Math.min(storedShowers.length * 0.2, 1));
       } catch (error) {
-        console.error('Virhe haettaessa tallennettua tavoitetta:', error);
-        Alert.alert('Virhe', 'Tavoitetta ei voitu ladata.');
-        setGoal('Virhe ladattaessa tavoitetta');
+        console.error('Virhe haettaessa tietoja:', error);
       }
     };
 
-    fetchGoal();
+    fetchGoalAndProgress();
   }, []);
+
+  const saveData = async (key, value) => {
+    try {
+      await AsyncStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.error('Virhe tallentaessa tietoja:', error);
+    }
+  };
 
   const addMeal = () => {
     if (mealName.trim()) {
-      setMeals([...meals, { id: Date.now().toString(), name: mealName.trim() }]);
+      const updatedMeals = [...meals, { id: Date.now().toString(), name: mealName.trim() }];
+      setMeals(updatedMeals);
       setMealName('');
       setProgress((prev) => Math.min(prev + 0.2, 1));
+      saveData('meals', updatedMeals);
     }
   };
 
   const addTravelMode = () => {
     if (selectedTravelMode) {
-      setTravelModes([...travelModes, { id: Date.now().toString(), mode: selectedTravelMode }]);
+      const updatedTravelModes = [...travelModes, { id: Date.now().toString(), mode: selectedTravelMode }];
+      setTravelModes(updatedTravelModes);
       setSelectedTravelMode('');
       setTravelProgress((prev) => Math.min(prev + 0.333, 1));
+      saveData('travelModes', updatedTravelModes);
     }
   };
 
   const addShower = () => {
     const duration = parseInt(showerDuration, 10);
     if (!isNaN(duration) && duration > 0 && duration <= 5) {
-      setShowers([...showers, { id: Date.now().toString(), duration }]);
+      const updatedShowers = [...showers, { id: Date.now().toString(), duration }];
+      setShowers(updatedShowers);
       setShowerDuration('');
       setWaterProgress((prev) => Math.min(prev + 0.2, 1));
+      saveData('showers', updatedShowers);
     } else {
       Alert.alert('Virhe', 'Kirjoita suihkun kesto numerona (1-5 minuuttia).');
     }
@@ -74,7 +94,9 @@ const Seuranta = ({ navigation }) => {
             value={mealName}
             onChangeText={setMealName}
           />
-          <Button title="Lisää ateria" onPress={addMeal} />
+          <TouchableOpacity onPress={addMeal} style={style.button}>
+            <Text style={style.buttonText}>Lisää ateria</Text>
+          </TouchableOpacity>
           <FlatList
             data={meals}
             keyExtractor={(item) => item.id}
@@ -115,7 +137,9 @@ const Seuranta = ({ navigation }) => {
             <Picker.Item label="Pyöräily" value="Pyöräily" />
             <Picker.Item label="Julkinen liikenne" value="Julkinen liikenne" />
           </Picker>
-          <Button title="Lisää kulkutapa" onPress={addTravelMode} />
+          <TouchableOpacity onPress={addTravelMode} style={style.button}>
+            <Text style={style.buttonText}>Lisää kulkutapa</Text>
+          </TouchableOpacity>
           <FlatList
             data={travelModes}
             keyExtractor={(item) => item.id}
@@ -153,7 +177,9 @@ const Seuranta = ({ navigation }) => {
             keyboardType="numeric"
             onChangeText={setShowerDuration}
           />
-          <Button title="Lisää suihkun kesto" onPress={addShower} />
+          <TouchableOpacity onPress={addShower} style={style.button}>
+            <Text style={style.buttonText}>Lisää suihkun kesto</Text>
+          </TouchableOpacity>
           <FlatList
             data={showers}
             keyExtractor={(item) => item.id}
@@ -193,7 +219,9 @@ const Seuranta = ({ navigation }) => {
             {goal ? `Valitsemasi tavoite: ${goal}` : 'Ei tavoitetta valittu'}
           </Text>
           {renderGoalContent()}
-          <Button title="Takaisin" onPress={() => navigation.goBack()} />
+          <TouchableOpacity onPress={() => navigation.goBack()} style={style.button}>
+            <Text style={style.buttonText}>Takaisin</Text>
+          </TouchableOpacity>
         </View>
       )}
       keyExtractor={(item, index) => index.toString()}

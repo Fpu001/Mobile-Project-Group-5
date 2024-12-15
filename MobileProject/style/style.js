@@ -158,4 +158,9 @@ export default StyleSheet.create({
         color: '#333',
         padding: 40, 
       },
+      saveButtonText:{
+        color: '#23AE23',
+        fontSize: 16,
+        fontWeight: 'bold',
+      }
 })
