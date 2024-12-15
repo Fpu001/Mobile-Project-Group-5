@@ -1,21 +1,23 @@
-import * as Notifications from 'expo-notifications';
+import PushNotification from 'react-native-push-notification';
 import { Platform } from 'react-native';
 
 // Käsittele ilmoituksia, kun ne saapuvat
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldPlaySound: true,
-    shouldSetBadge: false,
-  }),
+PushNotification.configure({
+  onNotification: function (notification) {
+    console.log('NOTIFICATION:', notification);
+  },
+  popInitialNotification: true,
+  requestPermissions: Platform.OS === 'ios', // Request permissions for iOS only
 });
 
 // Pyydä lupaa ilmoituksille
 export const requestNotificationPermission = async () => {
-  const { status } = await Notifications.requestPermissionsAsync();
-  if (status !== 'granted') {
-    alert('Ilmoitukset eivät ole sallittuja. Salli ne asetuksista.');
-    return false;
+  if (Platform.OS === 'ios') {
+    const permissionStatus = await PushNotification.requestPermissions();
+    if (!permissionStatus.alert) {
+      alert('Ilmoitukset eivät ole sallittuja. Salli ne asetuksista.');
+      return false;
+    }
   }
   return true;
 };
@@ -25,18 +27,19 @@ export const scheduleDailyReminder = async () => {
   const hasPermission = await requestNotificationPermission();
   if (!hasPermission) return;
 
-  await Notifications.cancelAllScheduledNotificationsAsync(); // Peruuta vanhat muistutukset
+  // Peruuta vanhat muistutukset
+  PushNotification.cancelAllLocalNotifications();
 
-  await Notifications.scheduleNotificationAsync({
-    content: {
-      title: 'Muistutus päivittää edistymistäsi',
-      body: 'Älä unohda päivittää tavoitteesi edistymistä tänään!',
-    },
-    trigger: {
-      hour: 13, // Muistutus klo 9 aamulla
-      minute: 40,
-      repeats: true,
-    },
+  // Aikatauluta uusi muistutus
+  PushNotification.localNotificationSchedule({
+    title: 'Muistutus päivittää edistymistäsi',
+    message: 'Älä unohda päivittää tavoitteesi edistymistä tänään!',
+    date: new Date(Date.now() + 10 * 1000), // Välitön muistutus (testausta varten)
+    repeatType: 'day', // Toistuu päivittäin
+    repeatTime: 1, // Toistuu kerran päivässä
+    // Trigger at 1:40 PM
+    userInfo: { id: 'dailyReminder' },
+    allowWhileIdle: true, // Allows notification even when the app is idle
   });
 
   alert('Päivittäinen muistutus on asetettu!');

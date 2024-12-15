@@ -6,13 +6,27 @@ import style from '../style/style';
 const Tavoitteet = ({ navigation }) => {
   const [selectedGoal, setSelectedGoal] = useState(null);
 
-  const goals = ['Tavoite 1', 'Tavoite 2', 'Tavoite 3'];
+  // Tavoitteet ja niiden selitykset
+  const goals = [
+    {
+      name: 'Kasvisateriatavoite',
+      description: 'Kasvisateriatavoite auttaa vähentämään lihantuotannon ympäristövaikutuksia ja parantaa terveyttä.'
+    },
+    {
+      name: 'Ympäristöystävällinen kulkutapa',
+      description: 'Tämä tavoite kannustaa valitsemaan kestävämpiä kulkutapoja, kuten pyöräilyä tai julkista liikennettä.'
+    },
+    {
+      name: 'Vedenkulutuksen vähentäminen',
+      description: 'Vedenkulutuksen vähentäminen on tärkeää luonnonvarojen säästämiseksi ja ympäristön suojelun edistämiseksi.'
+    }
+  ];
 
   const saveGoal = async () => {
     try {
       if (selectedGoal) {
-        await AsyncStorage.setItem('selectedGoal', selectedGoal);
-        Alert.alert('Tavoite tallennettu', `Valitsit: ${selectedGoal}`);
+        await AsyncStorage.setItem('selectedGoal', selectedGoal.name);
+        Alert.alert('Tavoite tallennettu', `Valitsit: ${selectedGoal.name}`);
       } else {
         Alert.alert('Valitse tavoite ennen tallennusta');
       }
@@ -31,16 +45,23 @@ const Tavoitteet = ({ navigation }) => {
           key={index} 
           style={[
             style.radioButton, 
-            selectedGoal === goal && style.radioButtonSelected
+            selectedGoal?.name === goal.name && style.radioButtonSelected
           ]}
           onPress={() => setSelectedGoal(goal)}
         >
           <View style={style.radioCircle}>
-            {selectedGoal === goal && <View style={style.radioInnerCircle} />}
+            {selectedGoal?.name === goal.name && <View style={style.radioInnerCircle} />}
           </View>
-          <Text style={style.radioText}>{goal}</Text>
+          <Text style={style.radioText}>{goal.name}</Text>
         </TouchableOpacity>
       ))}
+
+      {/* Näytetään valitun tavoitteen selitys */}
+      {selectedGoal && (
+        <View style={style.descriptionContainer}>
+          <Text style={style.descriptionText}>{selectedGoal.description}</Text>
+        </View>
+      )}
 
       <Button 
         title="Tallenna" 

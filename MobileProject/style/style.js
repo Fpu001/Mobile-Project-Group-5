@@ -3,10 +3,15 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
 
-    container: {
+    homeContainer: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        padding: 20
+      },
+      container: {
+        flex: 1,
+        padding: 20
       },
       title: {
         color: '#23AE23',
@@ -109,6 +114,48 @@ export default StyleSheet.create({
         borderWidth: 1,
         borderColor: 'black',
         width: '50%'
-      }
-      
+      },
+      input: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+        padding: 10,
+        marginBottom: 10,
+      },
+      picker: {
+        height: 50,
+        width: '100%',
+        marginBottom: 20,
+      },
+      subTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginTop: 20,
+      },
+      listItem: {
+        fontSize: 16,
+        paddingVertical: 5,
+      },
+      savingsText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginTop: 20,
+      },
+      goalStatus: {
+        fontSize: 18,
+        marginTop: 20,
+        textAlign: 'center',
+        color: 'green',
+      },
+      descriptionContainer: {
+        marginTop: 20,
+        padding: 10,
+        backgroundColor: '#f0f0f0',
+        borderRadius: 5,
+      },
+      descriptionText: {
+        fontSize: 14,
+        color: '#333',
+        padding: 40, 
+      },
 })

@@ -5,7 +5,7 @@ import style from '../style/style';
 
 const Etusivu = ({ navigation }) => {
   return (
-    <View style={style.container}>
+    <View style={style.homeContainer}>
       <Image 
         source={logo} 
         style={style.image} 
