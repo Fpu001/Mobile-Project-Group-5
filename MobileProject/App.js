@@ -8,7 +8,7 @@ import Seuranta from './components/seuranta';
 import Tietoja from './components/tietoja';
 import Tavoitteet from './components/tavoitteet';
 import Header from './components/header';
-import { scheduleDailyReminder } from './components/notifications'; 
+// import { scheduleDailyReminder } from './components/notifications'; 
 
 const Stack = createNativeStackNavigator();
 
@@ -63,15 +63,15 @@ const RootStack = () => {
 };
 
 export default function App() {
-  useEffect(() => {
-    // Pyydä lupaa ilmoituksille ja aseta muistutus
-    const setupNotifications = async () => {
-      await scheduleDailyReminder();  // Aikatauluta päivittäinen muistutus
-    };
+  // useEffect(() => {
+  //   // Pyydä lupaa ilmoituksille ja aseta muistutus
+  //   const setupNotifications = async () => {
+  //     await scheduleDailyReminder();  // Aikatauluta päivittäinen muistutus
+  //   };
 
-    setupNotifications();  // Käynnistä ilmoitusten käsittely
+  //   setupNotifications();  // Käynnistä ilmoitusten käsittely
 
-  }, []);  // Tämä hook suoritetaan vain kerran sovelluksen käynnistyessä
+  // }, []);  // Tämä hook suoritetaan vain kerran sovelluksen käynnistyessä
 
   return (
     <NavigationContainer>
