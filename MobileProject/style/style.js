@@ -207,4 +207,77 @@ export default StyleSheet.create({
         alignItems: 'center', // Keskittää elementit pystysuunnassa
         justifyContent: 'flex-start', // Asettaa elementit vasempaan laitaan
       },
+      tipPagecontainer: {
+        flex: 1,
+        padding: 20,
+        backgroundColor: '#f9f9f9',
+      },
+      scrollViewContent: {
+        flexGrow: 1,
+        justifyContent: 'center',
+      },
+      TipTitle: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        textAlign: 'center',
+        color: '#333',
+      },
+      Tiptext: {
+        fontSize: 16,
+        marginBottom: 15,
+        color: '#555',
+        lineHeight: 24,
+      },
+      tipContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 20,
+        backgroundColor: '#fff',
+        padding: 15,
+        borderRadius: 8,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3, // Androidille varjoefekti
+      },
+      TipIcon: {
+        marginRight: 15,
+        color: '#3c981e',
+      },
+      Tipbutton: {
+        backgroundColor: '#fff',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 5,
+        marginVertical: 10,
+        alignItems: 'center',
+        width: 200, 
+        borderWidth: 1
+      },
+      TipbuttonText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold',
+      },
+      TipButtonContainer:{
+        alignItems: 'center',
+         justifyContent:'center',
+          flex: 1 
+      },
+      introText: {
+        flexDirection: 'row',
+        fontSize: 16,
+        alignItems: 'center',
+        marginBottom: 20,
+        backgroundColor: '#fff',
+        padding: 15,
+        borderRadius: 8,
+        shadowColor: '#333',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3, // Androidille varjoefekti
+      },
 })
