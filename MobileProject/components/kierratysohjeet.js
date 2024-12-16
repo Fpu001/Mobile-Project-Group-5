@@ -39,27 +39,74 @@ const Kierratysohjeet = ({ navigation }) => {
         );
       case 'kartonki':
         return (
-          <Text style={style.modalText}>Kartonin kierrätysohjeet...</Text>
+          <Text style={style.modalText}>
+          kartonkiset, nestepakkaukset, myös alumiinivuoratut
+          elintarvikkeiden ja muiden tuotteiden kartonkipakkaukset
+          paperipussit, -kassit
+          käärepaperit, esimerkiksi kopiopaperin kääreet
+          WC- ja talouspaperirullien hylsyt
+          pizzalaatikot, munakennot
+          noutoruoka-astiat ja –pakkaukset, kertakäyttömukit
+          juomien pahviset monipakkaukset, esim. sixpackit ja salkut
+          pahvilaatikot
+          kartonkiset ja paperiset pakkaustäytteet</Text>
         );
       case 'lasi':
         return (
-          <Text style={style.modalText}>Lasin kierrätysohjeet...</Text>
+          <Text style={style.modalText}>
+          kirkkaat ja värilliset lasipakkaukset: lasipurkit ja -pullot
+          poista korkit ja kannet
+          voit jättää kaulusrenkaat ja etiketit paikalleen</Text>
         );
       case 'metalli':
         return (
-          <Text style={style.modalText}>Metallin kierrätysohjeet...</Text>
+          <Text style={style.modalText}>
+          säilyketölkit
+          pantittomat juomatölkit
+          metallikannet, -korkit ja -sulkimet
+          alumiinivuoat, -foliot ja -kannet
+          maalipurkit (täysin tyhjät ja kuivatut)
+          tyhjät ja paineettomat aerosolipullot
+          metalliset kahvikapselit</Text>
         );
       case 'muovi':
         return (
-          <Text style={style.modalText}>Muovin kierrätysohjeet...</Text>
+          <Text style={style.modalText}>
+          elintarvikkeiden muoviset pakkaukset, myös alumiinivuoratut
+          muovikassit, -pussit ja -kääreet
+          pesuaine-, shampoo- ja saippuapakkaukset
+          muut kotitalouden muoviset pakkaukset
+          EPS- eli styrox-pakkaukset
+          muoviset pakkaustäytteet
+          muoviset noutoruoka-astiat ja -pakkaukset, kertakäyttömukit</Text>
         );
       case 'paperi':
         return (
-          <Text style={style.modalText}>Paperin kierrätysohjeet...</Text>
+          <Text style={style.modalText}>
+          sanoma- ja aikakauslehdet
+          mainokset ja esitteet
+          kirjekuoret, myös ikkunalliset
+          toimisto- ja piirustuspaperit
+          puhelin- ja tuoteluettelot
+          vihkot (kierrekantisten vihkojen metalliosat tulee irrottaa ja kierrättää metallinkeräyksessä, vihkojen sivut lajitellaan paperiin)</Text>
         );
       case 'sekajate':
         return (
-          <Text style={style.modalText}>Sekajätteen kierrätysohjeet...</Text>
+          <Text style={style.modalText}>
+          muut muovituotteet kuin pakkaukset, esim. keittiön muovikipot ja -kupit
+          muoviset pakkausvanteet, narut ja nauhat
+          leivinpaperit, voipaperit
+          tuorekelmut, pakastepussit
+          valokuvat, diat ja vastaavat
+          kynttilänkannat
+          vaipat, terveyssiteet, vanulaput ja muut vastaavat hygieniatuotteet
+          kumi-, nahka- ja keinonahkatuotteet
+          pölynimurinpussit, tupakantumpit, purukumit
+          hehkulamput, halogeenilamput, sulakkeet
+          posliini- ja keramiikkatuotteet, lasiastiat, peilit
+          tyhjät värikasetit, VHS-kasetit, DVD-levyt ja vastaavat
+          erilaiset narut, lahjanauhat, teipit, lahjapaperit
+          puupalat, lastulevypalat</Text>
         );
       default:
         return null;
