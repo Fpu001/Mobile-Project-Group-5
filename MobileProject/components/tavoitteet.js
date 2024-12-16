@@ -10,17 +10,17 @@ const Tavoitteet = ({ navigation }) => {
   const goals = [
     {
       name: 'Kasvisateriatavoite',
-      description: 'Tavoite: Syö 5 kasvisateriaa viikossa. \n'
+      description: 'Tavoite: Syö viisi kasvisateriaa viikossa. \n'
       + 'Kasvisateriatavoite auttaa vähentämään lihantuotannon ympäristövaikutuksia ja parantaa terveyttä.'
     },
     {
-      name: 'Ympäristöystävällinen kulkutapa',
-      description: 'Tavoite: Käytä ympäristöystävällistä kulkutapaa 3 päivänä viikossa. \n' + 
+      name: 'Kulje ympäristöystävällisesti',
+      description: 'Tavoite: Kulje ympäristöystävällisesti vähintään kolmena päivänä viikossa. \n' + 
       'Tämä tavoite kannustaa valitsemaan kestävämpiä kulkutapoja, kuten pyöräilyä tai julkista liikennettä.'
     },
     {
-      name: 'Vedenkulutuksen vähentäminen',
-      description: 'Tavoite: Pidä suihkut alle 5minuutin kestoisina viidesti viikossa. \n' + 
+      name: 'Vähennä vedenkulutusta',
+      description: 'Tavoite: Pidä suihkut alle viiden minuutin kestoisina viidesti viikossa. \n' + 
       'Vedenkulutuksen vähentäminen on tärkeää luonnonvarojen säästämiseksi ja ympäristön suojelun edistämiseksi.'
     }
   ];
