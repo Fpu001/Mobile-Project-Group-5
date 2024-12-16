@@ -123,7 +123,7 @@ const Seuranta = ({ navigation }) => {
       );
     }
 
-    if (goal === 'Ympäristöystävällinen kulkutapa') {
+    if (goal === 'Kulje ympäristöystävällisesti') {
       return (
         <>
           <Text style={style.subTitle}>Kulje ympäristöystävällisesti</Text>
@@ -166,7 +166,7 @@ const Seuranta = ({ navigation }) => {
       );
     }
 
-    if (goal === 'Vedenkulutuksen vähentäminen') {
+    if (goal === 'Vähennä vedenkulutusta') {
       return (
         <>
           <Text style={style.subTitle}>Vähennä vedenkulutusta</Text>
