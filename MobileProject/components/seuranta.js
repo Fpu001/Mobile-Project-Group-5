@@ -117,7 +117,7 @@ const Seuranta = ({ navigation }) => {
           <Text style={style.goalStatus}>
             {meals.length >= 5
               ? 'Onneksi olkoon, tavoite saavutettu!'
-              : `Syö vielä ${5 - meals.length} kasvisateriaa saavuttaaksesi tavoitteen.`}
+              : `Syö vielä ${5 - meals.length} kasvisateriaa saavuttaaksesi tavoitteesi.`}
           </Text>
         </>
       );
@@ -126,7 +126,7 @@ const Seuranta = ({ navigation }) => {
     if (goal === 'Ympäristöystävällinen kulkutapa') {
       return (
         <>
-          <Text style={style.subTitle}>Ympäristöystävällinen kulkutapa</Text>
+          <Text style={style.subTitle}>Kulje ympäristöystävällisesti</Text>
           <Picker
             selectedValue={selectedTravelMode}
             style={style.picker}
@@ -169,7 +169,7 @@ const Seuranta = ({ navigation }) => {
     if (goal === 'Vedenkulutuksen vähentäminen') {
       return (
         <>
-          <Text style={style.subTitle}>Vedenkulutuksen vähentäminen</Text>
+          <Text style={style.subTitle}>Vähennä vedenkulutusta</Text>
           <TextInput
             style={style.input}
             placeholder="Kirjoita suihkun kesto (minuuttia)"
