@@ -24,7 +24,18 @@ const Kierratysohjeet = ({ navigation }) => {
     switch (modalVisible) {
       case 'biojate':
         return (
-          <Text style={style.modalText}>Biojätteen kierrätysohjeet...</Text>
+          <Text style={style.modalText}>
+          ruuantähteet
+          hedelmien, juuresten, vihannesten ja kananmunien kuoret
+          kahvin- ja teenporot suodatinpusseineen
+          ruokarasvat ja -öljyt (imeytä nestemäiset esim. talouspaperiin)
+          kalanperkeet ja luut
+          pehmopaperit, esim. talouspaperi ja paperiset lautasliinat
+          kasvijätteet ja kukkamulta
+          pienet puupalat esim. hammas- ja jäätelötikut
+          lemmikkieläinten kasvikuitu-, puu- ja bentoniittipohjaiset kuivikkeet
+          vitamiinit ja hivenaineet pakkauksistaan poistettuna
+          sanomalehtipaperi tai kananmunakenno kuivikkeena</Text>
         );
       case 'kartonki':
         return (
