@@ -19,8 +19,16 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 16,
       },
+      titleContainer: {
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 5,
+        marginVertical: 10,
+        alignItems: 'center',
+
+      },
       text: {
-        color: '#23AE23',
+        color: '#23ae23',
         fontWeight: 'bold',
         fontSize: 15
       },
@@ -141,11 +149,28 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 20,
       },
-      goalStatus: {
-        fontSize: 18,
-        marginTop: 20,
+      goal: {
+        fontSize: 20,                    
+        color: '#23ae23',               
+        fontWeight: 'bold',              
         textAlign: 'center',
-        color: 'green',
+        marginVertical: 7,
+        padding: 7,
+        backgroundColor: '#dfeae1',      
+        borderRadius: 10,               
+        shadowColor: '#000',             
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.3,
+        shadowRadius: 4,
+        elevation: 6
+      },
+      goalStatus: {
+        fontSize: 18,                    
+        color: '#23ae23',               
+        fontWeight: 'bold',              
+        textAlign: 'center',
+        marginVertical: 7,
+        padding: 7,
       },
       descriptionContainer: {
         marginTop: 20,
@@ -174,7 +199,7 @@ export default StyleSheet.create({
         padding: 20,
         borderRadius: 10,
         width: '80%',
-        height: '60%',
+        height: '80%',
         alignItems: 'center',
       },
       modalTitle: {
@@ -188,7 +213,7 @@ export default StyleSheet.create({
         marginBottom: 20,
       },
       closeButton: {
-        backgroundColor: '#007BFF',
+        backgroundColor: '#23ae23',
         padding: 10,
         borderRadius: 5,
       },
@@ -261,7 +286,7 @@ export default StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
       },
-      TipButtonContainer:{
+      buttonContainer:{
         alignItems: 'center',
          justifyContent:'center',
           flex: 1 

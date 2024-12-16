@@ -30,7 +30,7 @@ const Kulutavahemman = ({ navigation }) => {
             <Text style={style.Tiptext}>{tip.text}</Text>
           </View>
         ))}
-        <View style={style.TipButtonContainer}> 
+        <View style={style.buttonContainer}> 
         <TouchableOpacity style={style.Tipbutton} onPress={() => navigation.goBack()}>
           <Text style={style.buttonText}>Takaisin</Text>
         </TouchableOpacity>

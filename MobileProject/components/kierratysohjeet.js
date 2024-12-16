@@ -25,31 +25,31 @@ const Kierratysohjeet = ({ navigation }) => {
       case 'biojate':
         return (
           <Text style={style.modalText}>
-          ruuantähteet
-          hedelmien, juuresten, vihannesten ja kananmunien kuoret
-          kahvin- ja teenporot suodatinpusseineen
-          ruokarasvat ja -öljyt (imeytä nestemäiset esim. talouspaperiin)
-          kalanperkeet ja luut
-          pehmopaperit, esim. talouspaperi ja paperiset lautasliinat
-          kasvijätteet ja kukkamulta
-          pienet puupalat esim. hammas- ja jäätelötikut
-          lemmikkieläinten kasvikuitu-, puu- ja bentoniittipohjaiset kuivikkeet
-          vitamiinit ja hivenaineet pakkauksistaan poistettuna
-          sanomalehtipaperi tai kananmunakenno kuivikkeena</Text>
+           Ruuantähteet{"\n"}
+            Hedelmien, juuresten, vihannesten ja kananmunien kuoret{"\n"}
+            Kahvin- ja teenporot suodatinpusseineen{"\n"}
+            Ruokarasvat ja -öljyt (imeytä nestemäiset esim. talouspaperiin){"\n"}
+            Kalanperkeet ja luut{"\n"}
+            Pehmopaperit, esim. talouspaperi ja paperiset lautasliinat{"\n"}
+            Kasvijätteet ja kukkamulta{"\n"}
+            Pienet puupalat esim. hammas- ja jäätelötikut{"\n"}
+            Lemmikkieläinten kasvikuitu-, puu- ja bentoniittipohjaiset kuivikkeet{"\n"}
+            Vitamiinit ja hivenaineet pakkauksistaan poistettuna{"\n"}
+            Sanomalehtipaperi tai kananmunakenno kuivikkeena</Text>
         );
       case 'kartonki':
         return (
           <Text style={style.modalText}>
-          kartonkiset, nestepakkaukset, myös alumiinivuoratut
-          elintarvikkeiden ja muiden tuotteiden kartonkipakkaukset
-          paperipussit, -kassit
-          käärepaperit, esimerkiksi kopiopaperin kääreet
-          WC- ja talouspaperirullien hylsyt
-          pizzalaatikot, munakennot
-          noutoruoka-astiat ja –pakkaukset, kertakäyttömukit
-          juomien pahviset monipakkaukset, esim. sixpackit ja salkut
-          pahvilaatikot
-          kartonkiset ja paperiset pakkaustäytteet</Text>
+          Kartonkiset, nestepakkaukset, myös alumiinivuoratut{"\n"}
+            Elintarvikkeiden ja muiden tuotteiden kartonkipakkaukset{"\n"}
+            Paperipussit, -kassit{"\n"}
+            Käärepaperit, esimerkiksi kopiopaperin kääreet{"\n"}
+            WC- ja talouspaperirullien hylsyt{"\n"}
+            Pizzalaatikot, munakennot{"\n"}
+            Noutoruoka-astiat ja –pakkaukset, kertakäyttömukit{"\n"}
+            Juomien pahviset monipakkaukset, esim. sixpackit ja salkut{"\n"}
+            Pahvilaatikot{"\n"}
+            Kartonkiset ja paperiset pakkaustäytteet</Text>
         );
       case 'lasi':
         return (
@@ -61,52 +61,52 @@ const Kierratysohjeet = ({ navigation }) => {
       case 'metalli':
         return (
           <Text style={style.modalText}>
-          säilyketölkit
-          pantittomat juomatölkit
-          metallikannet, -korkit ja -sulkimet
-          alumiinivuoat, -foliot ja -kannet
-          maalipurkit (täysin tyhjät ja kuivatut)
-          tyhjät ja paineettomat aerosolipullot
-          metalliset kahvikapselit</Text>
+          Säilyketölkit{"\n"}
+            Pantittomat juomatölkit{"\n"}
+            Metallikannet, -korkit ja -sulkimet{"\n"}
+            Alumiinivuoat, -foliot ja -kannet{"\n"}
+            Maalipurkit (täysin tyhjät ja kuivatut){"\n"}
+            Tyhjät ja paineettomat aerosolipullot{"\n"}
+            Metalliset kahvikapselit</Text>
         );
       case 'muovi':
         return (
           <Text style={style.modalText}>
-          elintarvikkeiden muoviset pakkaukset, myös alumiinivuoratut
-          muovikassit, -pussit ja -kääreet
-          pesuaine-, shampoo- ja saippuapakkaukset
-          muut kotitalouden muoviset pakkaukset
-          EPS- eli styrox-pakkaukset
-          muoviset pakkaustäytteet
-          muoviset noutoruoka-astiat ja -pakkaukset, kertakäyttömukit</Text>
+          Elintarvikkeiden muoviset pakkaukset, myös alumiinivuoratut{"\n"}
+            Muovikassit, -pussit ja -kääreet{"\n"}
+            Pesuaine-, shampoo- ja saippuapakkaukset{"\n"}
+            Muut kotitalouden muoviset pakkaukset{"\n"}
+            EPS- eli styrox-pakkaukset{"\n"}
+            Muoviset pakkaustäytteet{"\n"}
+            Muoviset noutoruoka-astiat ja -pakkaukset, kertakäyttömukit</Text>
         );
       case 'paperi':
         return (
           <Text style={style.modalText}>
-          sanoma- ja aikakauslehdet
-          mainokset ja esitteet
-          kirjekuoret, myös ikkunalliset
-          toimisto- ja piirustuspaperit
-          puhelin- ja tuoteluettelot
-          vihkot (kierrekantisten vihkojen metalliosat tulee irrottaa ja kierrättää metallinkeräyksessä, vihkojen sivut lajitellaan paperiin)</Text>
+           Sanoma- ja aikakauslehdet{"\n"}
+            Mainokset ja esitteet{"\n"}
+            Kirjekuoret, myös ikkunalliset{"\n"}
+            Toimisto- ja piirustuspaperit{"\n"}
+            Puhelin- ja tuoteluettelot{"\n"}
+            Vihkot (kierrekantisten vihkojen metalliosat tulee irrottaa ja kierrättää metallinkeräyksessä, vihkojen sivut lajitellaan paperiin)</Text>
         );
       case 'sekajate':
         return (
           <Text style={style.modalText}>
-          muut muovituotteet kuin pakkaukset, esim. keittiön muovikipot ja -kupit
-          muoviset pakkausvanteet, narut ja nauhat
-          leivinpaperit, voipaperit
-          tuorekelmut, pakastepussit
-          valokuvat, diat ja vastaavat
-          kynttilänkannat
-          vaipat, terveyssiteet, vanulaput ja muut vastaavat hygieniatuotteet
-          kumi-, nahka- ja keinonahkatuotteet
-          pölynimurinpussit, tupakantumpit, purukumit
-          hehkulamput, halogeenilamput, sulakkeet
-          posliini- ja keramiikkatuotteet, lasiastiat, peilit
-          tyhjät värikasetit, VHS-kasetit, DVD-levyt ja vastaavat
-          erilaiset narut, lahjanauhat, teipit, lahjapaperit
-          puupalat, lastulevypalat</Text>
+          Muut muovituotteet kuin pakkaukset, esim. keittiön muovikipot ja -kupit{"\n"}
+            Muoviset pakkausvanteet, narut ja nauhat{"\n"}
+            Leivinpaperit, voipaperit{"\n"}
+            Tuorekelmut, pakastepussit{"\n"}
+            Valokuvat, diat ja vastaavat{"\n"}
+            Kynttilänkannat{"\n"}
+            Vaipat, terveyssiteet, vanulaput ja muut vastaavat hygieniatuotteet{"\n"}
+            Kumi-, nahka- ja keinonahkatuotteet{"\n"}
+            Pölynimurinpussit, tupakantumpit, purukumit{"\n"}
+            Hehkulamput, halogeenilamput, sulakkeet{"\n"}
+            Posliini- ja keramiikkatuotteet, lasiastiat, peilit{"\n"}
+            Tyhjät värikasetit, VHS-kasetit, DVD-levyt ja vastaavat{"\n"}
+            Erilaiset narut, lahjanauhat, teipit, lahjapaperit{"\n"}
+            Puupalat, lastulevypalat</Text>
         );
       default:
         return null;
@@ -115,8 +115,9 @@ const Kierratysohjeet = ({ navigation }) => {
 
   return (
     <View style={style.container}>
+      <View style={style.titleContainer}> 
       <Text style={style.title}>Kierrätysohjeet</Text>
-      
+      </View>
       {/* Kuvakkeet */}
       <TouchableOpacity onPress={() => handlePress('biojate')}>
       <View style={style.iconWithTextContainer}>
@@ -131,7 +132,7 @@ const Kierratysohjeet = ({ navigation }) => {
         </View>
       </TouchableOpacity>
       
-      {/* Lasi-ikonia ja tekstiä vierekkäin */}
+ 
       <TouchableOpacity onPress={() => handlePress('lasi')}>
         <View style={style.iconWithTextContainer}>
           <Image source={lasi} style={style.recycleIcons} />
@@ -162,12 +163,13 @@ const Kierratysohjeet = ({ navigation }) => {
         <Text style={style.recycleText}>Sekajäte</Text>
         </View>
       </TouchableOpacity>
-
+    <View style={style.buttonContainer}>
       <TouchableOpacity style={style.button} onPress={() => navigation.goBack()}> 
         <Text style={style.buttonText}>Takaisin</Text>
       </TouchableOpacity>
+      </View>
 
-      {/* Modal, joka avautuu painetun ikonin mukaan */}
+    
       <Modal
         visible={modalVisible !== null}
         animationType="slide"

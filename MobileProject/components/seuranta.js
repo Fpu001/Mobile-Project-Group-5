@@ -214,14 +214,18 @@ const Seuranta = ({ navigation }) => {
       data={[1]} 
       renderItem={() => (
         <View style={style.container}>
+          <View style={style.titleContainer}>
           <Text style={style.title}>Tavoitteiden seuranta</Text>
-          <Text style={style.text}>
+          </View>
+          <Text style={style.goal}>
             {goal ? `Valitsemasi tavoite: ${goal}` : 'Ei tavoitetta valittu'}
           </Text>
           {renderGoalContent()}
+          <View style={style.buttonContainer}>
           <TouchableOpacity onPress={() => navigation.goBack()} style={style.button}>
             <Text style={style.buttonText}>Takaisin</Text>
           </TouchableOpacity>
+          </View>
         </View>
       )}
       keyExtractor={(item, index) => index.toString()}

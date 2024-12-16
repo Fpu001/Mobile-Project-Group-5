@@ -40,7 +40,9 @@ const Tavoitteet = ({ navigation }) => {
 
   return (
     <View style={style.container}>
+      <View style={style.titleContainer}>
       <Text style={style.title}>Tavoitteet</Text>
+      </View>
       <Text style={style.text}>Valitse tavoitteesi</Text>
       
       {goals.map((goal, index) => (
@@ -62,7 +64,7 @@ const Tavoitteet = ({ navigation }) => {
       {/* Näytetään valitun tavoitteen selitys */}
       {selectedGoal && (
         <View style={style.descriptionContainer}>
-          <Text style={style.descriptionText}>{selectedGoal.description}</Text>
+          <Text style={style.text}>{selectedGoal.description}</Text>
         </View>
       )}
 
@@ -72,10 +74,12 @@ const Tavoitteet = ({ navigation }) => {
         <Text style={style.saveButtonText}>Tallenna</Text>
       </TouchableOpacity>
 
+      <View style={style.buttonContainer}>
       <TouchableOpacity style={style.button}
         onPress={() => navigation.goBack()}> 
         <Text style={style.buttonText}>Takaisin</Text>
       </TouchableOpacity>
+      </View>
     </View>
   );
 };
