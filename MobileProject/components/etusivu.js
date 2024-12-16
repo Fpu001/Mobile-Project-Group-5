@@ -10,7 +10,7 @@ const Etusivu = ({ navigation }) => {
         source={logo} 
         style={style.image} 
       />
-      <Text style={style.title}>Go green</Text>
+      <Text style={style.title}>Go Green</Text>
 
       <TouchableOpacity 
         style={style.button} 
